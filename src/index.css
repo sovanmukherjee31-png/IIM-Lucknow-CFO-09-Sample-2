@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Noto Serif", serif;
+  --font-body: "Manrope", sans-serif;
+
+  --color-primary: #000a1e;
+  --color-primary-container: #002147;
+  --color-secondary: #775a19;
+  --color-secondary-fixed: #ffdea5;
+  --color-secondary-fixed-dim: #e9c176;
+  --color-surface: #fbf9fa;
+  --color-surface-container: #efedee;
+  --color-surface-container-low: #f5f3f4;
+  --color-surface-container-high: #eae7e8;
+  --color-surface-container-highest: #e4e2e3;
+  --color-on-surface: #1b1c1c;
+  --color-on-surface-variant: #44474e;
+  --color-outline: #74777f;
+  --color-outline-variant: #c4c6cf;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-body antialiased;
+  }
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, rgba(0, 10, 30, 0.95) 0%, rgba(0, 33, 71, 0.85) 100%);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
